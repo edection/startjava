@@ -2,38 +2,34 @@ public class ConditionalStatement {
 	public static void main(String[] args) {
 		int age = 21;
 		if (age > 20) {
-			System.out.println("Старше 20 лет");
+			System.out.println("Over 20 years old");
 		} else {
-			System.out.println("Младше 20 лет");
+			System.out.println("Under 20 years of age");
 		}
 
 		boolean male = true;
-		if (male = true) {
-			System.out.println("Мужчина");
-		} else {
-			System.out.println("Не мужского пола");
+		if (male) {
+			System.out.println("Male");
 		}
-		
-		if (male != false) {
-			System.out.println("Не мужского пола");
-		} else {
-			System.out.println("Мужчина");
+
+		if (!male) {
+			System.out.println("Not male");
 		}
 
 		float height = 1.80f;
 		if (height < 1.80) {
-			System.out.println("Ниже 1 метра 80 см.");
+			System.out.println("Below 1 meter 80 cm.");
 		} else {
-			System.out.println("От 1 метра 80 см.");
+			System.out.println("Above 1 meter 80 cm.");
 		}
 
-		char firstInitial = 'M';
-		if (firstInitial == 'M') {
-			System.out.println("M - первая буква в имени");
-		} else if (firstInitial == 'I') {
-			System.out.println("I - первая буква в имени");
+		char firstNameLetter = 'M';
+		if (firstNameLetter == 'M') {
+			System.out.println("M - first name letter");
+		} else if (firstNameLetter == 'I') {
+			System.out.println("I - first name letter");
 		} else {
-			System.out.println(" любая первая буква в имени, кроме M и I");
+			System.out.println("any first name letter other than M and I");
 		}
 	}
 }
