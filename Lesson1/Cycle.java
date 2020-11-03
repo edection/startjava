@@ -7,7 +7,7 @@ public class Cycle {
 		int counter = 6;
 		while(counter >= -6) {
 			System.out.println(counter);
-			counter-=2;
+			counter -=2;
 		}
 
 		int sumOdd = 0;
