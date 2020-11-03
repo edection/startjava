@@ -4,22 +4,20 @@ public class Cycle {
 			System.out.println(i);
 		}
 
-		int result = 6;
-		while(result >= -6) {
-			System.out.println(result);
-			result-=2;
+		int counter = 6;
+		while(counter >= -6) {
+			System.out.println(counter);
+			counter -=2;
 		}
 
-		int number = 9;
-		int sumOdds = 0;
+		int sumOdd = 0;
 		do {
-			number = number + 1;
-			if(number % 2 != 0) {
-				System.out.println(number + " odds");
-				sumOdds +=number;
+			counter++;
+			if(counter % 2 != 0 && counter > 9) {
+				System.out.println(counter + " odds");
+				sumOdd +=counter;
 			} 
-		} while(number <= 19);
-		
-		System.out.println(sumOdds);
+		} while(counter <= 19);
+		System.out.println(sumOdd);
 	}
 }
