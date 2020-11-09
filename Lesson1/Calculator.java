@@ -18,7 +18,7 @@ public class Calculator {
 		} else if(sign == '^') {
 			result = 1;
 			for(int i = 1; i <= y; i++) {
-			result *= x;
+				result *= x;
 			}
 		} else if(sign == '%') {
 			result = x % y;
