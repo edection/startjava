@@ -1,7 +1,7 @@
 public class Person {
 	
-	String personName = "Super Mario"; // имя
-	String personGender = "Male"; // пол
+	String name = "Super Mario"; // имя
+	String gender = "Male"; // пол
 	int age = 25; // возраст
 	float height = 1.5f; // рост
 	int weight = 60; // вес
@@ -22,4 +22,7 @@ public class Person {
 
 	}
 
+	void learnJava() {
+
+	}
 }
