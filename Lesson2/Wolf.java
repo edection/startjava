@@ -1,10 +1,10 @@
 public class Wolf {
 	
-	String name = "Wolfenstein"; 
-	String gender = "Male";
-	String color = "grey";
-	int age = 5;
-	int weight = 10;
+	String name; 
+	String gender;
+	String color;
+	int age;
+	int weight;
 
 	boolean move() {
 		System.out.println("Move");
