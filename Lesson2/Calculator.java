@@ -1,24 +1,24 @@
-public class Calculator { // отвечает за мат. вычисления и проверку мат. знака
+public class Calculator {
 	
-	private int x;
-	private int y;
+	private int number1;
+	private int number2;
 	private char sign;
 	private int result;
 
-	public int getX() {
-		return x;
+	public int getNumber1() {
+		return number1;
 	}
 
-	public void setX(int x1) {
-		x = x1;
+	public void setNumber1(int number11) {
+		number1 = number11;
 	}
 
-	public int getY() {
-		return y;
+	public int getNumber2() {
+		return number2;
 	}
 
-	public void setY(int y1) {
-		y = y1;
+	public void setNumber2(int number22) {
+		number2 = number22;
 	}
 
 	public char getSign() {
@@ -29,32 +29,35 @@ public class Calculator { // отвечает за мат. вычисления 
 		sign = sign1;
 	}
 
-	public void count() {
-		switch(sign) { // проверка мат. знака и вычисление
+	public void calculate() {
+		switch(sign) {
 			case '+' :
-				result = x + y; {
-					System.out.println(result);
-				}
+				result = number1 + number2;
+				System.out.println(result);
 				break; 
 			case '-' :
-				result = x - y; {
-					System.out.println(result);
-				}
+				result = number1 - number2;
+				System.out.println(result);
 				break; 
 			case '*' :
-				result = x * y; {
-					System.out.println(result);
-				}
+				result = number1 * number2;
+				System.out.println(result);
 				break; 
 			case '/' :
-				if(y == 0) {
-					System.out.println("Incorrect second number - zero, try again"); // условие о недопустимости деления на ноль
+				if(number2 == 0) {
+					System.out.println("Incorrect second number - zero, try again");
 				} else {
-				result = x / y; {
-					System.out.println(result);
+				result = number1 / number2;
 				}
-				break; 
-			}
+				System.out.println(result);
+				break;
+			case '^' :
+				result = 1;
+				for(int i = 1; i <= number2; i++) {
+				result *= number1;
+				}
+				System.out.println(result);
+				break;
 		}
 	}
 }
