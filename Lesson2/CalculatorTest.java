@@ -5,28 +5,22 @@ public class CalculatorTest {
 		Calculator calc = new Calculator();
 		String answer;
 
-		while(true){
+		do {
 			Scanner scan = new Scanner(System.in);
 			System.out.println("Enter the first number: ");
-			int number1 = scan.nextInt();
-			calc.setNumber1(number1);
+			calc.setNumber1(scan.nextInt());
 			System.out.println("Enter the sign of the mathematical operation: ");
-			char sign = scan.next().charAt(0);
-			calc.setSign(sign);
+			calc.setSign(scan.next().charAt(0));
 			System.out.println("Enter the second number: ");
-			int number2 = scan.nextInt();
-			calc.setNumber2(number2);
+			calc.setNumber2(scan.nextInt());
 			calc.calculate();
 			scan.nextLine();
 
 			do {
 				System.out.println("Do you want to continue? [yes / no]:");
 				answer = scan.nextLine();
-					if("no".equals(answer)) {
-						System.out.println("Finish");
-						return;
-					}
-				} while (!"yes".equals(answer));
-		}
+			} while (!"no".equals(answer) && !"yes".equals(answer));
+		} while (!"no".equals(answer));
+		System.out.println("Finish");
 	}
 }
