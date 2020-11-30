@@ -1,22 +1,15 @@
 class JaegerTest {
 	public static void main(String[] args) {
+		Jaeger one = new Jaeger("StrikerEureka", "Destroyed", 10, 9, 1, 1);
 
-		String name = "StrikerEureka";
-		String status = "Destroyed";
-		int speed = 10;
-		int armor = 9;
+		one.print();
+		one.fire();
+		one.leap();
 
-		Jaeger one = new Jaeger(name, status, speed, armor);
-		one.fire(1);
-		one.leap(1);
+		Jaeger two = new Jaeger("GipsyDanger", "Destroyed", 7, 9, 2, 2);
 
-		name = "GipsyDanger";
-		status = "Destroyed";
-		speed = 7;
-		armor = 9;
-
-		Jaeger two = new Jaeger(name, status, speed, armor);
-		two.fire(2);
-		two.leap(2);
+		two.print();
+		two.fire();
+		two.leap();
 	}
 }
