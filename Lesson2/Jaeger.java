@@ -4,39 +4,7 @@ public class Jaeger {
 	private int speed;
 	private int armor;
 
-	public String getName() {
-		return name;
-	} 
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public int getSpeed() {
-		return speed;
-	}
-
-	public void setSpeed(int speed) {
-		this.speed = speed;
-	}
-
-	public int getArmor() {
-		return armor;
-	}
-
-	public void setArmor(int armor) {
-		this.armor = armor;
-	}
-
-	public void print() {
+	public Jaeger (String name, String status, int speed, int armor) {
 		System.out.println("Name " + name);
 		System.out.println("Status " + status);
 		System.out.println("Speed " + speed);
@@ -56,6 +24,8 @@ public class Jaeger {
 			System.out.println("Low jumps");
 		} else if (y == 2) {
 			System.out.println("Leap into the air");
-		}
-	}
-}
+		} // else if
+	} // метод
+} // class
+
+
