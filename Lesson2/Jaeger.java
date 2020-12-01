@@ -47,17 +47,9 @@ public class Jaeger {
 		this.armor = armor;
 	}
 
-/*	public void print() {
-		System.out.println("Name " + name);
-		System.out.println("Status " + status);
-		System.out.println("Speed " + speed);
-		System.out.println("Armor " + armor);
-	}*/
-
 	public String toString() {
 		return "Name " + name + "; Status " + status + "; Speed " + speed + "; Armor " + armor;
 	}
-
 
 	public void fire() {
 		if (fire == 1) {
