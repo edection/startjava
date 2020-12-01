@@ -6,13 +6,13 @@ public class Jaeger {
 	private int fire;
 	private int leap;
 
-	public Jaeger (String jaegerName, String jaegerStatus, int jaegerSpeed, int jaegerArmor, int jaegerFire, int jaegerLeap) {
-		name = jaegerName;
-		status = jaegerStatus;
-		speed = jaegerSpeed;
-		armor = jaegerArmor;
-		fire = jaegerFire;
-		leap = jaegerLeap;
+	public Jaeger(String jaegerName, String jaegerStatus, int jaegerSpeed, int jaegerArmor, int jaegerFire, int jaegerLeap) {
+		this.name = jaegerName;
+		this.status = jaegerStatus;
+		this.speed = jaegerSpeed;
+		this.armor = jaegerArmor;
+		this.fire = jaegerFire;
+		this.leap = jaegerLeap;
 	}
 
 	public String getName() {
@@ -47,12 +47,17 @@ public class Jaeger {
 		this.armor = armor;
 	}
 
-	public void print() {
+/*	public void print() {
 		System.out.println("Name " + name);
 		System.out.println("Status " + status);
 		System.out.println("Speed " + speed);
-		System.out.println("Speed " + armor);
+		System.out.println("Armor " + armor);
+	}*/
+
+	public String toString() {
+		return "Name " + name + "; Status " + status + "; Speed " + speed + "; Armor " + armor;
 	}
+
 
 	public void fire() {
 		if (fire == 1) {
