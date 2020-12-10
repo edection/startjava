@@ -4,49 +4,38 @@ import java.util.Scanner;
 
 public class GuessNumber {
 	int randomNumber;
-	String answer;
-	String playerOne;
-	String playerTwo;
+	Player playerOne;
+	Player playerTwo;
 
 	Scanner scan = new Scanner(System.in);
 
-	public GuessNumber(String playerOne, String playerTwo) {
+	public GuessNumber(Player playerOne, Player playerTwo) {
 		this.playerOne = playerOne;
 		this.playerTwo = playerTwo;
 	}
 
-	public void startGame() {
-		do {
+	public void start() {
 		Random random = new Random();
 		randomNumber = random.nextInt(101);
 		System.out.println("Random number: " + randomNumber);
 
-			while (true) {
-			System.out.println(playerOne + "'s number: ");
-			Player numberOne = new Player(scan.nextInt());
-				if(numberOne.getNumber() == randomNumber) {
-					System.out.println(playerOne + " win!");
-					break;
-				} else {
-					System.out.println("Wrong number. Next player!");
-				}
-			System.out.println(playerTwo + "'s number: ");
-			Player numberTwo = new Player(scan.nextInt());
-				if(numberTwo.getNumber() == randomNumber) {
-					System.out.println(playerTwo + " win!");
-					break;
-				} else {
-					System.out.println("Wrong number. Next player!");
-				}
+		while (true) {
+		System.out.println(playerOne.getName() + "'s number: ");
+		playerOne.setNumber(scan.nextInt());
+		if(playerOne.getNumber() == randomNumber) {
+			System.out.println(playerOne.getName() + " win!");
+			break;
+		} else {
+			System.out.println("Wrong number. Next player!");
+		}
+		System.out.println(playerTwo.getName() + "'s number: ");
+		playerTwo.setNumber(scan.nextInt());
+		if(playerTwo.getNumber() == randomNumber) {
+			System.out.println(playerTwo.getName() + " win!");
+			break;
+		} else {
+			System.out.println("Wrong number. Next player!");
 			}
-
-			scan.nextLine();
-
-			do {
-				System.out.println("Do you want to continue? [yes / no]:");
-				answer = scan.nextLine();
-			} while (!"no".equals(answer) && !"yes".equals(answer));
-		} while (!"no".equals(answer));
-		System.out.println("Finish");
+		}
 	}
 }
