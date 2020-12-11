@@ -3,9 +3,9 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNumber {
-	int randomNumber;
-	Player playerOne;
-	Player playerTwo;
+	private int randomNumber;
+	private Player playerOne;
+	private Player playerTwo;
 
 	Scanner scan = new Scanner(System.in);
 
@@ -20,21 +20,26 @@ public class GuessNumber {
 		System.out.println("Random number: " + randomNumber);
 
 		while (true) {
-		System.out.println(playerOne.getName() + "'s number: ");
-		playerOne.setNumber(scan.nextInt());
-		if(playerOne.getNumber() == randomNumber) {
-			System.out.println(playerOne.getName() + " win!");
-			break;
-		} else {
-			System.out.println("Wrong number. Next player!");
-		}
-		System.out.println(playerTwo.getName() + "'s number: ");
-		playerTwo.setNumber(scan.nextInt());
-		if(playerTwo.getNumber() == randomNumber) {
-			System.out.println(playerTwo.getName() + " win!");
-			break;
-		} else {
-			System.out.println("Wrong number. Next player!");
+			System.out.println(playerOne.getName() + "'s number: ");
+			playerOne.setNumber(scan.nextInt());
+			if(playerOne.getNumber() == randomNumber) {
+				System.out.println(playerOne.getName() + " win!");
+				break;
+			} else if (playerOne.getNumber() < randomNumber) {
+				System.out.println("Number is less than the random number. Next player!");
+			} else if (playerOne.getNumber() > randomNumber) {
+				System.out.println("Number is greater than the random number. Next player!");
+			}
+
+			System.out.println(playerTwo.getName() + "'s number: ");
+			playerTwo.setNumber(scan.nextInt());
+			if(playerTwo.getNumber() == randomNumber) {
+				System.out.println(playerTwo.getName() + " win!");
+				break;
+			} else if (playerTwo.getNumber() < randomNumber) {
+				System.out.println("Number is less than the random number. Next player!");
+			} else if (playerTwo.getNumber() > randomNumber) {
+				System.out.println("Number is greater than the random number. Next player!");
 			}
 		}
 	}
