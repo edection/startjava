@@ -1,3 +1,5 @@
+package com.startjava.lesson1.game;
+
 public class MyFirstGame {
 	public static void main(String[] args) {
 		int computerNum = 15;// компьютер загадывает целое число от 0 до 100
