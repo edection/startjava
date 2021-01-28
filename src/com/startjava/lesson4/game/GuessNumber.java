@@ -22,11 +22,11 @@ public class GuessNumber {
 		System.out.println("Загаданное число: " + randomNum);
 
 		for (int i = 0; i < 10; i++) {
-			if(checkNum(playerOne)) {
+			if(makeMove(playerOne)) {
 				resultGame(playerOne);
 				break;
 			}
-			if(checkNum(playerTwo)) {
+			if(makeMove(playerTwo)) {
 				resultGame(playerTwo);
 				break;
 			}
@@ -43,17 +43,19 @@ public class GuessNumber {
 		playerTwo.clear();
 	}
 
-	private boolean checkNum(Player player) {
+	private void enterNum(Player player) {
 		System.out.print(player.getName() + " называет число: ");
 		player.setNum(scan.nextInt());
-		scan.nextLine();
-		player.getPlayersNum();
-		if (player.getPlayersNum() == randomNum) {
+	}
+
+	private boolean makeMove(Player player) {
+		enterNum(player);
+		if (player.getNum() == randomNum) {
 			System.out.println(player.getName() + " угадал!");
 			return true;
-		} else if (player.getPlayersNum() < randomNum) {
+		} else if (player.getNum() < randomNum) {
 			System.out.println("Это число меньше загаданного значения.");
-		} else if (player.getPlayersNum() > randomNum) {
+		} else if (player.getNum() > randomNum) {
 			System.out.println("Это число больше загаданного значения.");
 		}
 		System.out.println("У игрока " + player.getName() + " осталось попыток: " + (10 - player.getNumAttempt()));
@@ -64,13 +66,13 @@ public class GuessNumber {
 	}
 
 	private void printNums(Player player) {
-		for (int num : player.getPrintNums()) {
+		for (int num : player.getAllNums()) {
 			System.out.print(num + " ");
 		}
 	}
 
 	private void resultGame(Player player) {
-		if (player.getPlayersNum() == randomNum) {
+		if (player.getNum() == randomNum) {
 			System.out.println("игрок " + player.getName() + " угадал число " + randomNum + " с " + player.getNumAttempt() + " попытки");
 		}
 	}

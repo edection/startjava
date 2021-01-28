@@ -20,11 +20,11 @@ public class Player {
 		nums[numAttempt - 1] = num;
 	}
 
-	public int getPlayersNum() {
+	public int getNum() {
 		return nums[numAttempt - 1];
 	}
 
-	public int[] getPrintNums() {
+	public int[] getAllNums() {
 		return Arrays.copyOf(nums, numAttempt);
 	}
 
