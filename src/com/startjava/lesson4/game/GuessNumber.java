@@ -22,14 +22,8 @@ public class GuessNumber {
 		System.out.println("Загаданное число: " + randomNum);
 
 		for (int i = 0; i < 10; i++) {
-			if(makeMove(playerOne)) {
-				resultGame(playerOne);
-				break;
-			}
-			if(makeMove(playerTwo)) {
-				resultGame(playerTwo);
-				break;
-			}
+			if(makeMove(playerOne)) break;
+			if(makeMove(playerTwo)) break;
 		}
 
 		System.out.print("Числа первого игрока: " );
@@ -43,7 +37,12 @@ public class GuessNumber {
 
 	private boolean makeMove(Player player) {
 		enterNum(player);
-		return checkNum(player);
+		boolean result = checkNum(player);
+		System.out.println("У игрока " + player.getName() + " осталось попыток: " + (10 - player.getNumAttempt()));
+		if (player.getNumAttempt() == 10) {
+			System.out.println("У " + player.getName() + " закончились попытки.");
+		}
+		return result;
 	}
 
 	private void enterNum(Player player) {
@@ -53,14 +52,10 @@ public class GuessNumber {
 
 	private boolean checkNum(Player player) {
 		if (player.getNum() == randomNum) {
-			System.out.println(player.getName() + " угадал!");
+			System.out.println(player.getName() + " угадал число " + randomNum + " с " + player.getNumAttempt() + " попытки");
 			return true;
 		}
 		System.out.println((player.getNum() < randomNum) ? "Это число меньше загаданного значения" : "Это число больше загаданного значения");
-		System.out.println("У игрока " + player.getName() + " осталось попыток: " + (10 - player.getNumAttempt()));
-		if (player.getNumAttempt() == 10) {
-			System.out.println("У " + player.getName() + " закончились попытки.");
-		}
 		return false;
 	}
 
@@ -69,11 +64,5 @@ public class GuessNumber {
 			System.out.print(num + " ");
 		}
 		System.out.println();
-	}
-
-	private void resultGame(Player player) {
-		if (player.getNum() == randomNum) {
-			System.out.println("игрок " + player.getName() + " угадал число " + randomNum + " с " + player.getNumAttempt() + " попытки");
-		}
 	}
 }
