@@ -34,13 +34,16 @@ public class GuessNumber {
 
 		System.out.print("Числа первого игрока: " );
 		printNums(playerOne);
-		System.out.println();
 		System.out.print("Числа второго игрока: ");
 		printNums(playerTwo);
-		System.out.println();
 
 		playerOne.clear();
 		playerTwo.clear();
+	}
+
+	private boolean makeMove(Player player) {
+		enterNum(player);
+		return checkNum(player);
 	}
 
 	private void enterNum(Player player) {
@@ -48,16 +51,12 @@ public class GuessNumber {
 		player.setNum(scan.nextInt());
 	}
 
-	private boolean makeMove(Player player) {
-		enterNum(player);
+	private boolean checkNum(Player player) {
 		if (player.getNum() == randomNum) {
 			System.out.println(player.getName() + " угадал!");
 			return true;
-		} else if (player.getNum() < randomNum) {
-			System.out.println("Это число меньше загаданного значения.");
-		} else if (player.getNum() > randomNum) {
-			System.out.println("Это число больше загаданного значения.");
 		}
+		System.out.println((player.getNum() < randomNum) ? "Это число меньше загаданного значения" : "Это число больше загаданного значения");
 		System.out.println("У игрока " + player.getName() + " осталось попыток: " + (10 - player.getNumAttempt()));
 		if (player.getNumAttempt() == 10) {
 			System.out.println("У " + player.getName() + " закончились попытки.");
@@ -69,6 +68,7 @@ public class GuessNumber {
 		for (int num : player.getAllNums()) {
 			System.out.print(num + " ");
 		}
+		System.out.println();
 	}
 
 	private void resultGame(Player player) {
